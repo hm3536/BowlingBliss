@@ -1,0 +1,264 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --animate-duration: 800ms;
+  --animate-delay: 0.9s;
+}
+
+/* import for react slick */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+/* import for font family */
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+  transition: ease 1s;
+}
+
+/* Home page */
+
+.lineAnimation,
+.nextlineAnimation {
+  position: relative;
+  -webkit-text-stroke: 0.3vw #000000ce;
+}
+
+.lineAnimation::before,
+.nextlineAnimation::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-right: #fff;
+  color: #FFF;
+  -webkit-text-stroke: 0.1vw #000000ce;
+  overflow: hidden;
+  animation: animate 3s linear forwards;
+  transition: ease 0.5s;
+}
+
+.nextlineAnimation::before {
+  animation-delay: 2s;
+}
+
+@keyframes animate {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  10%
+ {
+    opacity: 1;
+  }
+
+  50% {
+    width: 26%;
+    opacity: 1;
+  }
+
+  70%,
+  90%,
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+
+}
+
+.img {
+  color: #FFFFFF;
+  width: 400px;
+  height: 248px;
+  overflow: hidden;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+.img1 {
+  background: url('/Images/Group 4.png');
+}
+
+.img2 {
+  background: url('/Images/image_2024_01_18T15_18_35_439Z.png');
+}
+
+.img3 {
+  background: url('/Images/Group 7.png');
+}
+
+.head {
+  padding: 1rem;
+  font-family: 'Lalezar', system-ui;
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 65px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.bt:hover {
+  background-color: #940F0F;
+  scale: 1.040;
+  transition: ease 0.9s;
+}
+
+.read:hover {
+  scale: 1.040;
+  cursor: pointer;
+  transition: ease 0.8s;
+}
+
+.blog {
+  color: #FFFFFF;
+  width: 275px;
+  height: 410px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-size: auto;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  position: relative;
+}
+
+.content {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #940F0F);
+  border-radius: 10px;
+  position: absolute;
+  bottom: -100%;
+  top: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 40px;
+  text-align: center;
+  font-size: 14px;
+  transition: ease-in-out 0.5s;
+}
+
+.blog:hover .content {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+}
+
+.blog img {
+  transition: transform 0.5s;
+}
+
+.blog:hover img,
+.hover:hover {
+  transform: scale(1.1);
+  transition: ease-in-out 0.5s;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #940F0F;
+  color: #FFFFFF;
+}
+
+.slick-slide>div {
+  margin: 0 10px;
+}
+
+/* About US */
+
+.about,
+.term {
+  background: url('/Images/1758090 1.png');
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hv i:hover {
+  background-color: #940F0F;
+  color: #FFFFFF;
+}
+
+/* Navbar */
+
+.family {
+  font-family: 'Lalezar', system-ui;
+}
+
+.background {
+  height: 100vh;
+  width: 100%;
+  background: url('/Images/main.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  min-width: 1280px;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.navbar ul li,
+.line {
+  position: relative;
+}
+
+.navbar ul li::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  position: absolute;
+  background: #940F0F;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+.line::after {
+  content: '';
+  width: 80px;
+  height: 3px;
+  position: absolute;
+  background: #940F0F;
+  left: 40%;
+  right: 50%;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+  width: 100%;
+}
+
+.line:hover::after {
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #940F0F;
+  color: #fff;
+  cursor: pointer;
+}
+
+.place ::placeholder {
+  color: #000;
+}
